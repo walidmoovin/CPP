@@ -1,0 +1,48 @@
+#include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat(const std::string &name, unsigned int grade) : name(name){
+	std::cout << "Bureaucrat constructor called" << std::endl;
+	if (grade > 150)
+		throw Bureaucrat::gradeTooLowException();
+	if (grade < 1)
+		throw Bureaucrat::gradeTooHighException();
+	this->grade = grade;
+}
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name), grade(src.grade){
+	std::cout << "Bureaucrat copy constructor called" << std::endl;
+}
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat &src){
+	std::cout << "Bureaucrat assignment operator called" << std::endl;
+	(void)src;
+	return *this;
+}
+Bureaucrat::~Bureaucrat(){
+	std::cout << "Bureaucrat destructor called" << std::endl;
+}
+std::string Bureaucrat::getName() const{
+	return this->name;
+}	
+unsigned int Bureaucrat::getGrade() const{
+	return this->grade;
+}
+void Bureaucrat::incrementGrade(){
+	if (this->grade <= 1)
+			throw Bureaucrat::gradeTooHighException();
+	this->grade--;
+}
+void Bureaucrat::decrementGrade(){
+	if (this->grade >= 150)
+		throw Bureaucrat::gradeTooLowException();
+	this->grade++;
+}
+void Bureaucrat::executeForm(const Form &form){
+	if (form.getIsSigned() == false)
+		throw Bureaucrat::notSignedFormException();
+	form.execute(*this);
+}
+const char* Bureaucrat::gradeTooHighException::what() const throw(){
+	return "Grade is too high";
+}
+const char* Bureaucrat::gradeTooLowException::what() const throw(){
+	return "Grade is too low";
+}
