@@ -13,7 +13,7 @@ int main(void)
 		std::cout << "grade : " << Bob.getGrade() << std::endl;
 		Bob.incrementGrade();
 		std::cout << "new grade : " << Bob.getGrade() << std::endl;
-		PresidentialPardonForm form2("Bob");
+		ShrubberyCreationForm form2("Bob");
 		std::cout << "is the form signed ? " << form2.getIsSigned() << std::endl;
 		form2.beSigned(Bob);
 		std::cout << "asking for signature : is the form signed ? " << form2.getIsSigned() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: wbekkal <wbekkal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 13:24:17 by wbekkal           #+#    #+#             */
-/*   Updated: 2022/05/27 14:22:33 by wbekkal          ###   ########.fr       */
+/*   Updated: 2022/06/16 14:45:30 by wbekkal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv){
 								line[i] = argv[3][x];
 							else
 								line.insert(i, 1, argv[3][x]);
-							i++
+							i++;
 						}
 					}
 				}

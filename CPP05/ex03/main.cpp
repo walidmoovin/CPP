@@ -3,6 +3,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
@@ -13,11 +14,10 @@ int main(void)
 		std::cout << "grade : " << Bob.getGrade() << std::endl;
 		Bob.incrementGrade();
 		std::cout << "new grade : " << Bob.getGrade() << std::endl;
-		PresidentialPardonForm form2("Bob");
-		std::cout << "is the form signed ? " << form2.getIsSigned() << std::endl;
-		form2.beSigned(Bob);
-		std::cout << "asking for signature : is the form signed ? " << form2.getIsSigned() << std::endl;
-		Bob.executeForm(form2);
+		Intern maximus;
+		AForm *form = maximus.makeForm("presidential pardon", "Bob");
+		form->beSigned(Bob);
+		form->execute(Bob);
 	}
 	catch(const std::exception& e){
 		std::cerr << e.what() << std::endl;

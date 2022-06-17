@@ -1,4 +1,4 @@
-SRCS		= main3.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRCS		= main.cpp 
 OBJS		= $(SRCS:.cpp=.o)
 NAME		= main
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
