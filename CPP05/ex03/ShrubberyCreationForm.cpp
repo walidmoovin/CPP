@@ -34,5 +34,4 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor){
 	file << "│  ├─ index.js" << std::endl;
 	file << "├─ .gitignore" << std::endl;
 	file << "├─ package.json" << std::endl;
-
 }
