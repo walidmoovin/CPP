@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-template <typename T>
+template <typename T = int>
 class Array
 {
 	public:
